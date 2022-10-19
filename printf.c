@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * _printf - prints formatted string
+ * @format: string with zero or more directives and format specifiers
+ *
+ * Return: length of string.
+ */
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -64,6 +70,10 @@ int _printf(const char *format, ...)
 					}
 					ln--;
 					break;
+				default:
+					putchar('%');
+					putchar(*format);
+					ln++;
 			}
 		}
 	}
